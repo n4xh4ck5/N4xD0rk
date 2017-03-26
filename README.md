@@ -1,2 +1,2 @@
 # N4xD0rk
-Listing subdomanis about a main domain
+Listing subdomains about a main domain using the technique called Hacking with search engines.
