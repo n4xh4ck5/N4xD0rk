@@ -47,11 +47,11 @@ def ExportResults(data):
 	with open ('output.json','w') as f:
 		json.dump(data,f)
 #MAIN
-parser = argparse.ArgumentParser(description='This script searchs the subdominios about a domain using the results indexed of Bing search', formatter_class=RawTextHelpFormatter)
+parser = argparse.ArgumentParser(description='This script searchs the subdomains about a domain using the results indexed of Bing search', formatter_class=RawTextHelpFormatter)
 parser.add_argument('-d','--domain', help="The domain which it wants to search",required=False)
 parser.add_argument('-n','--search', help="Indicate the number of the search which you want to do",required=True)
 parser.add_argument('-e','--export', help='Export the results to a json file (Y/N)\n\n', required=False)
-parser.add_argument('-l','--language', help='indiate the language of the search\n\n\t(es)-Spanish(default)\n\t(en)-English', required=False)
+parser.add_argument('-l','--language', help='Indicate the language of the search\n\n\t(es)-Spanish(default)\n\t(en)-English', required=False)
 args = parser.parse_args()
 print " _   _ _  _        _____   ___       _"  
 print " | \ | | || |      |  __ \ / _ \     | |"
@@ -60,7 +60,7 @@ print " | . ` |__   _\ \/ / |  | | | | | '__| |/ /"
 print " | |\  |  | |  >  <| |__| | |_| | |  |   < "
 print " |_| \_|  |_| /_/\_\_____/ \___/|_|  |_|\_\ "
 print "\n"
-print """** Tool to search the subdominios about a domain using the results indexed of Bing search
+print """** Tool to search the subdomains about a domain using the results indexed of Bing search
     ** Author: Ignacio Brihuega Rodriguez a.k.a N4xh4ck5
     ** DISCLAMER This tool was developed for educational goals. 
     ** The author is not responsible for using to others goals.
