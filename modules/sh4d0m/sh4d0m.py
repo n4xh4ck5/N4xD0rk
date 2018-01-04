@@ -5,7 +5,7 @@ import shodan
 def create_shodan_object():
     shodan_object =""
     # Add your shodan API key here
-    api_key = "VcxJ479LhZG2Pc4NjU8GA4W0LcLGeATi"
+    api_key = ""
     shodan_object = shodan.Shodan(api_key)
     return shodan_object
     
