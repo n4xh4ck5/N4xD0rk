@@ -1,6 +1,19 @@
 # N4xD0rk
+
 Listing subdomains about a main domain using the technique called Hacking with search engines.
+
+# Instalation
+
+You can download the latest version of N4xD0rk by cloning the GitHub repository:
+
+<pre> git clone https://github.com/n4xh4ck5/N4xD0rk.git</pre>
+
+Install the dependencies via pip:
+
+<pre> pip install -r requirements.txt </pre>
+
 # Usage
+
 <pre>usage: n4xd0rk.py [-h] [-d DOMAIN] [-i IP] -o OPTION -n SEARCH [-e EXPORT]
                   [-l LANGUAGE]
 
@@ -27,3 +40,15 @@ optional arguments:
                         	(es)-Spanish(default)
                         	(en)-English
 </pre>
+
+# Author
+
+Ignacio Brihuega Rodríguez aka n4xh4ck5
+
+Twitter:  @Nachoo_91
+
+Web: fwhibbit.es
+
+# Disclamer
+
+The use of this tool is your responsability. I hereby disclaim any responsibility for actions taken with this tool.
