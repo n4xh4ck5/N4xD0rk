@@ -12,7 +12,7 @@ Install the dependencies via pip:
 
 <pre> pip install -r requirements.txt </pre>
 
-To install properly phantomJS follow tthe next steps:
+To install properly phantomJS follow the next steps:
 
 <pre>
 Linux (Debian, Ubuntu, Kali)
