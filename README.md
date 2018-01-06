@@ -12,6 +12,40 @@ Install the dependencies via pip:
 
 <pre> pip install -r requirements.txt </pre>
 
+To install properly phantomJS follow tthe next steps:
+
+<pre>
+Linux (Debian, Ubuntu, Kali)
+
+apt-get update && apt-get install phantomjs
+
+Linux (other distributions)
+
+Get the latest phantomjs program. The current version was 2.1.1 at the time of writing this tutorial.
+
+http://phantomjs.org/download.html
+
+https://bitbucket.org/ariya/phantomjs/downloads
+
+
+Download it on your system (choose 32 or 64bits) and untar it wherever you want, let's say /opt
+
+$ cd /opt
+
+$ wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+
+$ tar xvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+
+Make a symlink to the phantomjs binary in your /usr/local/bin directory
+
+$ ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+
+Execute the binary with the -v option to check that everything works
+
+$ phantomjs -v
+
+2.1.1</pre>
+
 # Usage
 
 <pre>usage: n4xd0rk.py [-h] [-d DOMAIN] [-i IP] -o OPTION -n SEARCH [-e EXPORT]
