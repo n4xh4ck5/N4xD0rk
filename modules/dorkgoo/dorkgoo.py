@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import requests
 import urllib2
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -43,18 +45,17 @@ def SearchGoogle(num,target,language):
 	raw_links = ""
 	url_google_final =[]
 	#Split the target in domain and extension
-	domain = target.replace(".es",'')
+	domain = target.split(".")[0]
 	extension = target.split(".")[1]
+	
 	print "\nLooking domains and subdomains of target",target
 	for start in range(start_page, (start_page + num)):
-		SearchGoogle = "https://www.google.com/search?q=(site:*."+target+"+OR+site:*"+target+"+OR+site:"+domain+"*."+extension+")+-site:www."+target+"&lr=lang_"+language+"&filter=&num=100"
-		#https://www.google.es/search?q=(site:*.vodafone.com+OR+site:*vodafone.com+OR+site:vodafone*.com)+-site:www.vodafone.com+-site:vodafone.com&lr=lang_en
-		#inurl:"http?://*vodafone*.es" -site:www.vodafone.es -site:vodafone.es
-		#(site:*.vodafone.es OR site:*vodafone.es OR site:vodafone*.es) -site:vodafone.es
+		SearchGoogle = "https://www.google.com/search?q=(site:*."+target+"+OR+site:*"+target+"+OR+site:"+domain+"*."+extension+")+-site:www."+target+"&lr=lang_="+language+"&filter=&num=100"
+
 	try:
 		response = requests.get(SearchGoogle, headers = user_agent)
 	except requests.exceptions.RequestException as e:
-		print "\nError connection to server!" #+ response.url,
+		print "\nError connection to server!" 
 		pass	
 	except requests.exceptions.ConnectTimeout as e:
 		print "\nError Timeout" #,target

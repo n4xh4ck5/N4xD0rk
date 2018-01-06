@@ -1,17 +1,18 @@
- #!/usr/bin/env python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
 import shodan
 
 def create_shodan_object():
     shodan_object =""
     # Add your shodan API key here
-    api_key = ""
+    api_key = "API_KEY"
     shodan_object = shodan.Shodan(api_key)
     return shodan_object
     
 def shodan_ip_search(shodan_search_object, shodan_search_ip):
     port_target = []
-    #port_target =""
     result = ""
     try:
         print "\nSearching Shodan for info about " + shodan_search_ip + "...\n"
@@ -21,7 +22,6 @@ def shodan_ip_search(shodan_search_object, shodan_search_ip):
             for i in result['data']:
                print 'Port: %s' % i['port']
                port_target.append(i['port'])
-               #print port_target
         except Exception as e:
             print e
     except Exception as e:
@@ -36,10 +36,10 @@ def CreateShodan(ip):
         search_ip = ip
         shodan_api_object = create_shodan_object()
         port_target = shodan_ip_search(shodan_api_object, search_ip)
-        #print port_target
         ports = str(port_target).replace("[","").replace("]","")
-        #print ports
-        return ports
+
     except Exception as e:
         print 'Error: %s' % e
         sys.exit(1)
+    finally:
+        return ports

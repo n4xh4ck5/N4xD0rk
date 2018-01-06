@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 def ShowResults(urls,array_ip,target, option):
 	newlist=[]
 	ip = ""

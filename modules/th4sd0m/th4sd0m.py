@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import requests
 from urlparse import urlparse
 from bs4 import BeautifulSoup
@@ -10,7 +12,7 @@ import json
 #define vars
 bing_dork=["site:","-site:","language:","domain:","ip:"]
 
-delete_bing=["microsoft","msn","bing"]
+delete_bing=["microsoft","msn","bing","hostinet"]
 
 """ FUNCTION SENDEQUEST """
 #Use Bing to obtain all domains contained in an IP
@@ -18,6 +20,7 @@ def SendRequest(ip,num,initial):
 	iteration = 0
 	count_bing=9
 	url_th4sd0m = []
+	url_temp = []
 	try:
 		while (iteration < num):
 			iteration = iteration +1
@@ -30,18 +33,17 @@ def SendRequest(ip,num,initial):
 				#Bring the next Bing results - 50 in each page
 				SearchBing = "https://www.bing.com/search?q="+bing_dork[4]+ip+"&first="+str(count_bing)+"&FORM=PORE"
 				count_bing=count_bing+50
-			try:
 				#Use requests to do the search
 				response=requests.get(SearchBing,allow_redirects=True)
-				url_th4sd0m = parser_html(response.text)	
-				#return url_th4sd0m
-			except Exception as e:
-				print e
-				pass
+				url_temp = parser_html(response.text)	
+				[url_th4sd0m.append(i) for i in url_temp if not i in url_th4sd0m] 
+
 	except Exception as e:
 		print e
 		pass
-	return url_th4sd0m
+
+	finally:
+		return url_th4sd0m
 #********************************************************#
 """ FUNCTION PARSER_HTML"""
 def parser_html(content):

@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import xlsxwriter
 import json
 def ExportResults(data,array_ip,output):

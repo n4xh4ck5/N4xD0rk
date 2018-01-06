@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import requests
 from urlparse import urlparse
 from bs4 import BeautifulSoup
@@ -9,6 +11,7 @@ import xlsxwriter
 import socket
 from urllib2 import urlopen
 from contextlib import closing
+
 #define vars
 bing_dork=["site:","-site:","language:","domain:","ip:"]
 delete_bing=["microsoft","msn","bing","hostinet"]
@@ -17,6 +20,7 @@ delete_bing=["microsoft","msn","bing","hostinet"]
 def SendRequest (target,num,option,initial,language):
 	count_bing= 9
 	iteration = 0
+	url_final_temp= []
 	url_final_n4xd0rk = []
 	response =""
 	try:
@@ -38,11 +42,15 @@ def SendRequest (target,num,option,initial,language):
 
 			#Requests
 			response=requests.get(SearchBing,allow_redirects=True)
-			url_final_n4xd0rk= parser_html(response.text)
+			url_final_temp= parser_html(response.text)
+			[url_final_n4xd0rk.append(i) for i in url_final_temp if not i in url_final_n4xd0rk] 
+
 	except Exception as e:
 		print str(e)
 		pass
-	return url_final_n4xd0rk
+
+	finally:
+		return url_final_n4xd0rk
 
 """FUNCTION PARSER_HTML"""
 def parser_html(content):

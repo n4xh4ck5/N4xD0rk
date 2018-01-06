@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import requests
 from urlparse import urlparse
 from bs4 import BeautifulSoup
@@ -39,7 +41,7 @@ def banner():
     ** DISCLAMER This tool was developed for educational goals. 
     ** The author is not responsible for using to others goals.
     ** A high power, carries a high responsibility!
-    ** Version 2.0"""
+    ** Version 2.1"""
 
 """FUNCTION HELP """
 def help():
@@ -63,9 +65,10 @@ def main (argv):
 	capture = args.capture
 	if capture is None:
 		capture = 'n'
-	"""if capture != 'y' or capture != 'n':
-		print "The capture is incorrect. Please, enter a valid capture"
-		exit (1)"""
+	capture = capture.lower()
+	if capture != 'y' and capture != 'n':
+		print "The capture is incorrect. Please, enter a valid capture."
+		exit (1)
 	language = args.language
 	if language is None:
 		language="es"
@@ -105,11 +108,14 @@ def main (argv):
 			exit(1)
 	try:
 		if option == 1:
+			#BING
 			urls_n4xd0rk = n4xd0rk.SendRequest(target,N,1,initial,language) 
-			urls_d0rkgo0 = dorkgoo.SearchGoogle(5,target,language)
+			#GOOGLE
+			urls_d0rkgo0 = dorkgoo.SearchGoogle(N,target,language)
+			#Join Bing and Google and delete duplicate results
 			urls_target = deleteduplicate.DeleteDuplicate(urls_n4xd0rk,urls_d0rkgo0)
 			if capture == 'y':
-				screenshot.screen(urls_target)
+				screenshot.screen(urls_target,target)
 			for i in urls_target:
 				ip = whoip.WhoIP(i)
 				direction_ip.append(ip)
@@ -119,7 +125,7 @@ def main (argv):
 			sh4d0m.CreateShodan(target)
 			urls_target = th4sd0m.SendRequest(target,N,True)
 			if capture == 'y':
-				screenshot.screen(urls_target)
+				screenshot.screen(urls_target,target)
 			try:
 				direction_ip.append(str(target))
 			except Exception as e:
