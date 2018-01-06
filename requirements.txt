@@ -5,3 +5,4 @@ argparse==1.4.0
 json
 shodan
 selenium
+phantomjs
