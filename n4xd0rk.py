@@ -47,7 +47,7 @@ def banner():
 def help():
 	print  """ \nThis script obtains the IP associated a domain
 
- 			Example of usage: python osint-framework.py -d apple.com """
+ 			Example of usage: python n4xd0rk.py -d apple.com """
 def main (argv):
 	parser = argparse.ArgumentParser(description='This script searchs the subdomains about a domain using the results indexed of Bing search.', formatter_class=RawTextHelpFormatter)
 	parser.add_argument('-t','--target', help="The domain or IP which wants to search.",required=True)
@@ -83,6 +83,8 @@ def main (argv):
 	direction_ip = []
 	initial = True
 	flag = None
+	banner()
+	help()
 	#Verify inputs
 	if target == None:
 		print "The target is empty. Please, enter a valid target"
