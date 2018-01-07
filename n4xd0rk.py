@@ -47,7 +47,7 @@ def banner():
 def help():
 	print  """ \nThis script obtains the IP associated a domain
 
- 			Example of usage: python n4xd0rk.py -d apple.com """
+ 			Example of usage: python n4xd0rk.py -d apple.com -n 5 """
 def main (argv):
 	parser = argparse.ArgumentParser(description='This script searchs the subdomains about a domain using the results indexed of Bing search.', formatter_class=RawTextHelpFormatter)
 	parser.add_argument('-t','--target', help="The domain or IP which wants to search.",required=True)
