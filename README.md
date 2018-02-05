@@ -48,21 +48,16 @@ $ phantomjs -v
 
 # Usage
 
-<pre>usage: n4xd0rk.py [-h] [-d DOMAIN] [-i IP] -o OPTION -n SEARCH [-e EXPORT]
-                  [-l LANGUAGE]
+<pre>usage: n4xd0rk.py [-h] -t TARGET -n NUMBER [-e EXPORT] [-l LANGUAGE]
+                  [-c CAPTURE]
 
-This script searchs the subdomains about a domain using the results indexed of Bing search.
+This script searchs the subdomains about a domain using the results indexed of Google and Bing search.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -d DOMAIN, --domain DOMAIN
-                        The domain which wants to search.
-  -i IP, --ip IP        The IP which to kown the domains to contain.
-  -o OPTION, --option OPTION
-                        Select an option:
-                        	1. Searching the subdomains about a domain using the results indexed.
-                        	2. Searching the domains belong to an IP.
-  -n SEARCH, --search SEARCH
+  -t TARGET, --target TARGET
+                        The domain or IP which wants to search.
+  -n NUMBER, --number NUMBER
                         Indicate the number of the search which you want to do.
   -e EXPORT, --export EXPORT
                         Export the results to a json file (Y/N)
@@ -72,8 +67,60 @@ optional arguments:
   -l LANGUAGE, --language LANGUAGE
                         Indicate the language of the search
                         	(es)-Spanish(default)
-                        	(en)-English
+  -c CAPTURE, --capture CAPTURE
+                        Indicate if you want to take a screenshot of each web (y/n)
 </pre>
+
+# Example
+<pre>
+python n4xd0rk.py -t apple.com -n 1
+
+	   _   _ _  _        _____   ___       _ 
+	  | \ | | || |      |  __ \ / _ \     | |
+	  |  \| | || |___  _| |  | | | | |_ __| | __
+	  | . ` |__   _\ \/ / |  | | | | | '__| |/ /
+	  | |\  |  | |  >  <| |__| | |_| | |  |   < 
+	  |_| \_|  |_| /_/\_\_____/ \___/|_|  |_|\_\  
+
+
+
+	** Tool to search the subdomains about a domain using the results indexed of Google and Bing search
+    ** Author: Ignacio Brihuega Rodriguez a.k.a N4xh4ck5
+    ** DISCLAMER This tool was developed for educational goals. 
+    ** The author is not responsible for using to others goals.
+    ** A high power, carries a high responsibility!
+    ** Version 2.1
+ 
+This script obtains the IP associated a domain
+
+ 			Example of usage: python n4xd0rk.py -t apple.com -n 5 
+
+Looking domains and subdomains of target apple.com
+
+ Domains and subdomains of apple.com are:
+
+
+	- www.apple.com [23.XXX.XX.83]
+
+
+	- communities.apple.com [23.XXX.XXX.242]
+
+
+	- selfsolve.apple.com [88.XXX.XXX.168]
+
+
+	- checkcoverage.apple.com [88.XXX.XXX.168]
+
+
+	- support.apple.com [104.XXX.XXX.98]
+
+
+	- itunes.apple.com [23.XXX.XXX.95]
+
+
+	- araes.apple.com [17.XXX.XXX.53]
+  
+  </pre>
 
 # Author
 
