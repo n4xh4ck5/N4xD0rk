@@ -126,7 +126,7 @@ Looking domains and subdomains of target apple.com
 
 Ignacio Brihuega Rodríguez aka n4xh4ck5
 
-Twitter:  @Nachoo_91
+Twitter:  @n4xh4ck5
 
 Web: fwhibbit.es
 
